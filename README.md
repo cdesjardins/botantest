@@ -10,7 +10,7 @@ configure.py --disable-shared --disable-modules=selftest,tls --prefix=%BOTANINST
 nmake install
 devenv
 ```
-Then open the botantest.sln project with MSVS, and compile. It should produce the following link error:
+Then open the botantest.sln project with MSVS, and compile (Note: the project also uses the env var BOTANINST). It should produce the following link error:
 ```
 botan-1.11.lib(botan_all.obj) : error LNK2005: "public: unsigned int __thiscall Botan::BigInt::bytes(void)const " (?bytes@BigInt@Botan@@QBEIXZ) already defined in botantest.obj
 ```
