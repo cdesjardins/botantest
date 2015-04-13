@@ -6,11 +6,11 @@ The following commands should do it when issued from an VS2013 x86 command promp
 
 ```
 set BOTANINST=$HOME\install
-configure.py --disable-shared --disable-modules=selftest,tls --prefix=$BOTANINST --build-mode=debug --cpu=i386 --via-amalgamation --maintainer-mode
+configure.py --disable-shared --disable-modules=selftest,tls --prefix=%BOTANINST% --build-mode=debug --cpu=i386 --via-amalgamation --maintainer-mode
 nmake install
 devenv
 ```
-When the compile happens it should produce the following link error:
+Then open the botantest.sln project with MSVS, and compile. It should produce the following link error:
 ```
 botan-1.11.lib(botan_all.obj) : error LNK2005: "public: unsigned int __thiscall Botan::BigInt::bytes(void)const " (?bytes@BigInt@Botan@@QBEIXZ) already defined in botantest.obj
 ```
