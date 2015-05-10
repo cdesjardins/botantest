@@ -5,7 +5,7 @@ Set the BOTANINST env var to the install directory for botan 1.11 and then try t
 The following commands should do it when issued from an VS2013 x86 command prompt:
 
 ```
-set BOTANINST=$HOME\install
+set BOTANINST=%USERPROFILE%\install
 configure.py --disable-shared --disable-modules=selftest,tls --prefix=%BOTANINST% --build-mode=debug --cpu=i386 --via-amalgamation --maintainer-mode
 nmake install
 devenv
